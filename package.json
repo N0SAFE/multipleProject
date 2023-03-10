@@ -1,0 +1,32 @@
+{
+    "name": "multipleproject",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "workspaces": [
+        "**/*"
+    ],
+    "scripts": {
+      "api": "npm run start -w api",
+      "dev": "concurrently \"npm run dev:react\" \"npm run dev:vue\"",
+      "dev:api": "concurrently \"npm run dev:react\" \"npm run dev:vue\" \"npm run api\"",
+      "dev:vue": "npm run dev -w vue-quizz-web-app",
+      "dev:vue:api": "concurrently \"npm run api\" \"npm run dev:vue\"",
+      "dev:react": "npm run dev -w react-quizz-web-app",
+      "dev:react:api": "concurrently \"npm run api\" \"npm run dev:react\"",
+      "start:api": "concurrently \"npm run start:react\" \"npm run start:vue\" \"npm run api\"",
+      "start:vue": "npm run start -w vue-quizz-web-app",
+      "start:vue:api": "concurrently \"npm run api\" \"npm run start:vue\"",
+      "start:react": "npm run start -w react-quizz-web-app",
+      "start:react:api": "concurrently \"npm run api\" \"npm run start:react\"",
+      "build": "concurrently \"npm run build:react\" \"npm run build:vue\"",
+      "build:react": "npm run build -w react-quizz-web-app",
+      "build:vue": "npm run build -w react-vue-web-app",
+      "build:watch": "concurrently \"npm run build:watch:react\" \"npm run build:watch:vue\"",
+      "build:watch:react": "npm run build:watch -w react-quizz-web-app",
+      "build:watch:vue": "npm run build:watch -w react-vue-web-app"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
